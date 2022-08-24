@@ -8,15 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Autor")
+@Table(name = "autores")
 public class Autor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "codigo")
+	@Column(name = "aut_codigo")
 	private Integer codigo;
-	@Column(name = "nombre")
+	@Column(name = "aut_nombre")
 	private String nombre;
-	@Column(name = "foto")
+	@Column(name = "aut_foto")
 	private byte[] foto;
 	
 	public Autor() {

@@ -2,7 +2,6 @@ package com.biblioteca.rest;
 
 import java.util.List;
 import java.util.Map;
-
 import javax.ejb.EJB;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;

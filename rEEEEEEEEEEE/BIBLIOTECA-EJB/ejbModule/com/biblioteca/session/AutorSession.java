@@ -3,7 +3,6 @@ package com.biblioteca.session;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,7 +12,7 @@ import com.biblioteca.entidad.Autor;
 
 @Stateless
 public class AutorSession {
-
+	
 	@PersistenceContext(name = "BibliotecaPU")
 	EntityManager em;
 
@@ -30,7 +29,7 @@ public class AutorSession {
 	public Map<String, Object> consultarAutoresPorNombre(String nombre) {
 		Map<String, Object> retorno = new HashMap<String,Object>();
 		try {
-			String jpql = "SELECT a FROM Autor a " + "WHERE UPPER(a.nombre) LIKE :n" + "ORDER BY a.codigo";
+			String jpql = "select a from Autor a where upper (a.nombre) like :n order by a.codigo";
 
 			Query q = em.createQuery(jpql);
 			q.setParameter("n", "%" + nombre.toUpperCase() + "%");
