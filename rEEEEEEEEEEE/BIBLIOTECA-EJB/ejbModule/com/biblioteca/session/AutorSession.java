@@ -12,7 +12,7 @@ import com.biblioteca.entidad.Autor;
 
 @Stateless
 public class AutorSession {
-	
+
 	@PersistenceContext(name = "BibliotecaPU")
 	EntityManager em;
 
@@ -27,7 +27,7 @@ public class AutorSession {
 	}
 
 	public Map<String, Object> consultarAutoresPorNombre(String nombre) {
-		Map<String, Object> retorno = new HashMap<String,Object>();
+		Map<String, Object> retorno = new HashMap<String, Object>();
 		try {
 			String jpql = "select a from Autor a where upper (a.nombre) like :n order by a.codigo";
 
@@ -48,7 +48,7 @@ public class AutorSession {
 		Autor autor = em.find(Autor.class, codigo);
 		return autor;
 	}
-
+	
 	// Añadir
 	public Autor incluir(Autor autor) {
 		em.persist(autor); // insertar
@@ -76,7 +76,7 @@ public class AutorSession {
 
 	// Eliminar
 	public void eliminar(Integer codigo) {
-		//Falta validar que pasa si se quiere eliminar un codigo no existente
+		// Falta validar que pasa si se quiere eliminar un codigo no existente
 		Autor autorBuscar = em.find(Autor.class, codigo);
 		em.remove(autorBuscar);
 	}

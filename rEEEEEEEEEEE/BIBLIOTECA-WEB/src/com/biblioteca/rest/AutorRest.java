@@ -30,7 +30,14 @@ public class AutorRest {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/consultar-por-nombre")
+	@Path("/buscar-por-codigo")
+	public Autor buscarporCodigo(@QueryParam("codigo") Integer codigo) {
+		return as.buscarporCodigo(codigo);
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/buscar-por-nombre")
 	public Map<String, Object> consultarPorNombre(@QueryParam("nombre") String nombre) {
 		return as.consultarAutoresPorNombre(nombre);
 	}
@@ -40,6 +47,13 @@ public class AutorRest {
 	@Path("/incluir")
 	public Autor incluir(Autor autor) {
 		return as.incluir(autor);
+	}
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/editar")
+	public Autor editar(Autor autor) {
+		return as.editar(autor);
 	}
 	
 	@DELETE
