@@ -51,6 +51,7 @@ public class AutorSession {
 	
 	// Añadir
 	public Autor incluir(Autor autor) {
+		autor.setCodigo(null);
 		em.persist(autor); // insertar
 		em.refresh(autor); // consulta el dato insertado
 		return autor;
@@ -63,7 +64,7 @@ public class AutorSession {
 	}
 
 	// Incluye o edita un autor dependiendo de si existe o no
-	private Autor actualizar(Autor autor) {
+	public Autor actualizar(Autor autor) {
 		Autor autorActualizado = null;
 		Autor autorBuscar = buscarporCodigo(autor.getCodigo());
 		if (autorBuscar == null) {

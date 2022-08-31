@@ -56,6 +56,13 @@ public class AutorRest {
 		return as.editar(autor);
 	}
 	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/actualizar")
+	public Autor actualizar(Autor autor) {
+		return as.actualizar(autor);
+	}
+	
 	@DELETE
 	@Path("/eliminar/{id}")
 	public void eliminar(@PathParam("id") Integer codigo) {
