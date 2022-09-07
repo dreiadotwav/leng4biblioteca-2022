@@ -16,7 +16,7 @@ public class AutorSession {
 	@PersistenceContext(name = "BibliotecaPU")
 	EntityManager em;
 
-	// Consulta por Codigo
+	// Consulta
 	public List<Autor> consultarAutores() {
 		String jpql = "SELECT a FROM Autor a ORDER BY a.codigo";
 

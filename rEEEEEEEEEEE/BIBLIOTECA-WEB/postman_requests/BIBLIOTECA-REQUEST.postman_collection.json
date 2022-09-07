@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "8c526ec1-5998-4856-8fa8-0278bd369f1a",
+		"name": "BIBLIOTECA-REQUEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22779245"
+	},
+	"item": [
+		{
+			"name": "autor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BIBLIOTECA-WEB/rest/autor/consultar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BIBLIOTECA-WEB",
+						"rest",
+						"autor",
+						"consultar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultar_por_nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BIBLIOTECA-WEB/rest/autor/consultar-por-nombre?nombre=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BIBLIOTECA-WEB",
+						"rest",
+						"autor",
+						"consultar-por-nombre"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultar_por_codigo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/BIBLIOTECA-WEB/rest/autor/buscar-por-codigo?codigo=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BIBLIOTECA-WEB",
+						"rest",
+						"autor",
+						"buscar-por-codigo"
+					],
+					"query": [
+						{
+							"key": "codigo",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "incluir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\":null,\r\n    \"nombre\":\"Sarah J. Maas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/BIBLIOTECA-WEB/rest/autor/incluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BIBLIOTECA-WEB",
+						"rest",
+						"autor",
+						"incluir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\":null,\r\n    \"nombre\":\"Juana de Lara\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/BIBLIOTECA-WEB/rest/autor/incluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BIBLIOTECA-WEB",
+						"rest",
+						"autor",
+						"incluir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/BIBLIOTECA-WEB/rest/autor/eliminar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BIBLIOTECA-WEB",
+						"rest",
+						"autor",
+						"eliminar",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

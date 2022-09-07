@@ -8,19 +8,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Clientes")
+@Table(name = "clientes")
 public class Clientes {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(name = "codigo")
+		@Column(name = "cli_codigo")
 		private Integer codigo;
-		@Column (name = "nombre")
+		@Column (name = "cli_nombre")
 		private String nombre;
-		@Column (name = "ciudad")
+		@Column (name = "cli_ciudad")
 		private Integer ciudad;
-		@Column (name = "direccion")
+		@Column (name = "cli_direccion")
 		private String direccion;
-		@Column (name = "obs")
+		@Column (name = "cli_obs")
 		private String obs;
 		
 		public Clientes() {

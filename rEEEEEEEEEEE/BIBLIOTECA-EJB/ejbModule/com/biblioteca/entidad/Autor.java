@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,12 +20,15 @@ public class Autor {
 	private String nombre;
 	@Column(name = "aut_foto")
 	private byte[] foto;
+	@ManyToOne //Many es la clase, One el atributo
+	@JoinColumn(name = "aut_ciudad")
+	private Ciudades ciudad;
 	
 	public Autor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	public Integer getCodigo() {
 		return codigo;
 	}
@@ -46,6 +51,14 @@ public class Autor {
 
 	public void setFoto(byte[] foto) {
 		this.foto = foto;
+	}
+
+	public Ciudades getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(Ciudades ciudad) {
+		this.ciudad = ciudad;
 	}
 	
 	

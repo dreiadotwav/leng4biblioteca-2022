@@ -10,23 +10,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Prestamos")
+@Table(name = "prestamos")
 public class Prestamos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "numero")
+	@Column(name = "pre_numero")
 	private Integer numero;
-	@Column (name = "cliente")
+	@Column (name = "pre_cliente")
 	private Integer cliente;
-	@Column (name = "usuario")
+	@Column (name = "pre_usuario")
 	private Integer usuario;
-	@Column (name = "fecha")
+	@Column (name = "pre_fecha")
 	private Date fecha;
-	@Column (name = "obs")
+	@Column (name = "pre_obs")
 	private String obs;
-	@Column (name = "situacion")
+	@Column (name = "pre_situacion")
 	private Integer situacion;
-	@Column (name = "total")
+	@Column (name = "pre_total")
 	private Integer total;
 	
 	public Prestamos() {

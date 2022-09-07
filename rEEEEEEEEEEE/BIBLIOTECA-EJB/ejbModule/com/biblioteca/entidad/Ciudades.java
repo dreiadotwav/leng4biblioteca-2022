@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Ciudades")
+@Table(name = "ciudades")
 public class Ciudades {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "codigo")
+	@Column(name = "ciu_codigo")
 	private Integer codigo;
-	@Column (name = "descripcion")
+	@Column (name = "ciu_descripcion")
 	private String descripcion;
 	
 	public Ciudades() {
