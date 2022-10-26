@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,8 +18,9 @@ public class Clientes {
 		private Integer codigo;
 		@Column (name = "cli_nombre")
 		private String nombre;
-		@Column (name = "cli_ciudad")
-		private Integer ciudad;
+		@ManyToOne
+		@JoinColumn (name = "cli_ciudad")
+		private Ciudades ciudad;
 		@Column (name = "cli_direccion")
 		private String direccion;
 		@Column (name = "cli_obs")
@@ -43,11 +46,11 @@ public class Clientes {
 			this.nombre = nombre;
 		}
 
-		public Integer getCiudad() {
+		public Ciudades getCiudad() {
 			return ciudad;
 		}
 
-		public void setCiudad(Integer ciudad) {
+		public void setCiudad(Ciudades ciudad) {
 			this.ciudad = ciudad;
 		}
 

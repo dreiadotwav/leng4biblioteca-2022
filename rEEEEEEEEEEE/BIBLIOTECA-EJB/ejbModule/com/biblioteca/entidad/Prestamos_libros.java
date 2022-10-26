@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,10 +18,12 @@ public class Prestamos_libros {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pli_secuencia")
 	private Integer secuencia;
-	@Column (name = "pli_prestamo")
-	private Integer prestamo;
-	@Column (name = "pli_libro")
-	private Integer libro;
+	@ManyToOne
+	@JoinColumn (name = "pli_prestamo")
+	private Prestamos prestamo;
+	@ManyToOne
+	@JoinColumn (name = "pli_libro")
+	private Libros libro;
 	@Column (name = "pli_estado")
 	private Integer estado;
 	@Column (name = "pli_dias")
@@ -41,19 +45,19 @@ public class Prestamos_libros {
 		this.secuencia = secuencia;
 	}
 
-	public Integer getPrestamo() {
+	public Prestamos getPrestamo() {
 		return prestamo;
 	}
 
-	public void setPrestamo(Integer prestamo) {
+	public void setPrestamo(Prestamos prestamo) {
 		this.prestamo = prestamo;
 	}
 
-	public Integer getLibro() {
+	public Libros getLibro() {
 		return libro;
 	}
 
-	public void setLibro(Integer libro) {
+	public void setLibro(Libros libro) {
 		this.libro = libro;
 	}
 

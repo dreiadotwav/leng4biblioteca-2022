@@ -18,7 +18,7 @@ public class Libros {
 	private String descripcion;
 	@Column (name = "lib_cantidad")
 	private Integer cantidad;
-	@Column (name = "obs")
+	@Column (name = "lib_obs")
 	private String obs;
 	
 	public Libros() {

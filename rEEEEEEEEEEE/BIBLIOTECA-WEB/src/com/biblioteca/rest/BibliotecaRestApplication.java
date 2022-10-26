@@ -20,6 +20,9 @@ public class BibliotecaRestApplication extends Application {
         singletons.add(corsFilter);
         
         classes.add(AutorRest.class);
+        classes.add(ClienteRest.class);
+        classes.add(LibroRest.class);
+        classes.add(CiudadRest.class);
 	}
 
     public Set<Object> getSingletons() {

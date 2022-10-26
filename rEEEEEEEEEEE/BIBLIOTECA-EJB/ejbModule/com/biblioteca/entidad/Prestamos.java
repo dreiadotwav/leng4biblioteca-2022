@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,10 +18,12 @@ public class Prestamos {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pre_numero")
 	private Integer numero;
-	@Column (name = "pre_cliente")
-	private Integer cliente;
-	@Column (name = "pre_usuario")
-	private Integer usuario;
+	@ManyToOne
+	@JoinColumn (name = "pre_cliente")
+	private Clientes cliente;
+	@ManyToOne
+	@JoinColumn (name = "pre_usuario")
+	private Usuarios usuario;
 	@Column (name = "pre_fecha")
 	private Date fecha;
 	@Column (name = "pre_obs")
@@ -41,19 +45,19 @@ public class Prestamos {
 		this.numero = numero;
 	}
 
-	public Integer getCliente() {
+	public Clientes getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Integer cliente) {
+	public void setCliente(Clientes cliente) {
 		this.cliente = cliente;
 	}
 
-	public Integer getUsuario() {
+	public Usuarios getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Integer usuario) {
+	public void setUsuario(Usuarios usuario) {
 		this.usuario = usuario;
 	}
 
