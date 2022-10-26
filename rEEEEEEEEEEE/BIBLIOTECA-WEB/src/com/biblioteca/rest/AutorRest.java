@@ -1,5 +1,6 @@
 package com.biblioteca.rest;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.ejb.EJB;
@@ -20,25 +21,57 @@ public class AutorRest {
 	@EJB
 	AutorSession as;
 	
+	//Consultar de gobi
 	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/consultar")
+	public Map<String, Object> consultar() {
+		Map<String, Object> retorno = new HashMap<String, Object>();
+		try {
+			retorno.put("success", true);
+			retorno.put("autor", as.consultarAutores());
+		} catch (Exception e) {
+			retorno.put("error", e.getMessage());
+			retorno.put("success", false);
+		}
+		return retorno;
+	}
+	
+	/*@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/consultar")
 	public List<Autor> consultar() {
 		return as.consultarAutores();
-	}
+	}*/
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/buscar-por-codigo")
-	public Autor buscarporCodigo(@QueryParam("codigo") Integer codigo) {
-		return as.buscarporCodigo(codigo);
+	public Map<String, Object> buscarporCodigo(@QueryParam("codigo") Integer codigo) {
+		Map<String, Object> retorno = new HashMap<String, Object>();
+		try {
+			retorno.put("success", true);
+			retorno.put("autor", as.buscarporCodigo(codigo));
+		} catch (Exception e) {
+			retorno.put("error", e.getMessage());
+			retorno.put("success", false);
+		}
+		return retorno;
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/buscar-por-nombre")
 	public Map<String, Object> consultarPorNombre(@QueryParam("nombre") String nombre) {
-		return as.consultarAutoresPorNombre(nombre);
+		Map<String, Object> retorno = new HashMap<String, Object>();
+		try {
+			retorno.put("success", true);
+			retorno.put("autor", as.consultarAutoresPorNombre(nombre));
+		} catch (Exception e) {
+			retorno.put("error", e.getMessage());
+			retorno.put("success", false);
+		}
+		return retorno;
 	}
 	
 	@POST

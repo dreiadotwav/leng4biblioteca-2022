@@ -16,7 +16,7 @@ public class AutorSession {
 	@PersistenceContext(name = "BibliotecaPU")
 	EntityManager em;
 
-	// Consulta
+	//Session de gobi
 	public List<Autor> consultarAutores() {
 		String jpql = "SELECT a FROM Autor a ORDER BY a.codigo";
 
@@ -25,8 +25,18 @@ public class AutorSession {
 
 		return autores;
 	}
+	
+	/*// Consulta
+	public List<Autor> consultarAutores() {
+		String jpql = "SELECT a FROM Autor a ORDER BY a.codigo";
 
-	public Map<String, Object> consultarAutoresPorNombre(String nombre) {
+		Query q = em.createQuery(jpql);
+		List<Autor> autores = q.getResultList();
+
+		return autores;
+	}*/
+
+	/*public Map<String, Object> consultarAutoresPorNombre(String nombre) {
 		Map<String, Object> retorno = new HashMap<String, Object>();
 		try {
 			String jpql = "select a from Autor a where upper (a.nombre) like :n order by a.codigo";
@@ -41,6 +51,16 @@ public class AutorSession {
 			retorno.put("error", e.getMessage());
 		}
 		return retorno;
+	}*/
+	
+	public List<Autor> consultarAutoresPorNombre(String nombre){
+		String jpql = "select a from Autor a where upper (a.nombre) like :n order by a.codigo";
+
+		Query q = em.createQuery(jpql);
+		q.setParameter("n", "%" + nombre.toUpperCase() + "%");
+		List<Autor> autores = q.getResultList();
+		
+		return autores;
 	}
 
 	// Busqueda
