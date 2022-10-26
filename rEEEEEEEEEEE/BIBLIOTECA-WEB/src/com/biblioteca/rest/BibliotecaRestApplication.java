@@ -23,6 +23,7 @@ public class BibliotecaRestApplication extends Application {
         classes.add(ClienteRest.class);
         classes.add(LibroRest.class);
         classes.add(CiudadRest.class);
+        classes.add(PrestamoRest.class);
 	}
 
     public Set<Object> getSingletons() {
