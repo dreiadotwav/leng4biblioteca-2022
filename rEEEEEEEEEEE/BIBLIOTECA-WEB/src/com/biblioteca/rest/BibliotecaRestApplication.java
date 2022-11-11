@@ -31,5 +31,5 @@ public class BibliotecaRestApplication extends Application {
     }
     public HashSet<Class<?>> getClasses(){
         return classes;
-      }
+    }
 }

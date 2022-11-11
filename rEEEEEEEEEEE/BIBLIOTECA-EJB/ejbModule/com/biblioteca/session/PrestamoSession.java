@@ -24,11 +24,11 @@ public class PrestamoSession {
 		return prestamo;
 	}
 	
-	public List<Prestamos> consultarPrestamosPorNombre(Integer cliente){
-		String jpql = "select a from Prestamos a where upper (a.cliente) like :n order by a.numero";
+	public List<Prestamos> consultarPrestamosPorObservacion(String obs){
+		String jpql = "select a from Prestamos a where upper (a.obs) like :n order by a.numero";
 
 		Query q = em.createQuery(jpql);
-		q.setParameter("n", "%" + cliente + "%");
+		q.setParameter("n", "%" + obs.toUpperCase() + "%");
 		List<Prestamos> prestamos = q.getResultList();
 		
 		return prestamos;

@@ -54,12 +54,12 @@ public class PrestamoRest {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/buscar-por-cliente")
-	public Map<String, Object> consultarPorPrestamo(@QueryParam("prestamo") Integer prestamo) {
+	@Path("/buscar-por-observacion")
+	public Map<String, Object> consultarPorObservacion(@QueryParam("observacion") String obs) {
 		Map<String, Object> retorno = new HashMap<String, Object>();
 		try {
 			retorno.put("success", true);
-			retorno.put("prestamo", ps.consultarPrestamosPorNombre(prestamo));
+			retorno.put("prestamo", ps.consultarPrestamosPorObservacion(obs));
 		} catch (Exception e) {
 			retorno.put("error", e.getMessage());
 			retorno.put("success", false);

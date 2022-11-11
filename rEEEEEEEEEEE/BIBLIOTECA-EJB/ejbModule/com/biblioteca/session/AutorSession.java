@@ -97,6 +97,8 @@ public class AutorSession {
 	public void eliminar(Integer codigo) {
 		// Falta validar que pasa si se quiere eliminar un codigo no existente
 		Autor autorBuscar = em.find(Autor.class, codigo);
-		em.remove(autorBuscar);
-	}
+		if(autorBuscar != null) {
+			em.remove(autorBuscar);
+		}
+	}	
 }
