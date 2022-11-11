@@ -20,7 +20,7 @@ public class Ciudades {
 	public Ciudades() {
 		super();
 	}
-	
+//	
 	public Integer getCodigo() {
 		return codigo;
 	}
